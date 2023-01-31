@@ -65,7 +65,7 @@ const deleteProperty = (arr) => {
         return "NO";
     }
 }
-console.log([{fname:'John',},'fname'])
+console.log(deleteProperty([{fname:'John',},'fname']))
 //solution
 function average(arrOfMarks) {
     let sum = 0;
