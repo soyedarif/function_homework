@@ -57,7 +57,9 @@ function temperatureConverter(valNum) {
 //solution
 const deleteProperty = (arr) => {
     let obj = arr[0];
+    console.log(obj)
     let prop = arr[1];
+    console.log(prop)
     if (obj.hasOwnProperty(prop)) {
         delete obj[prop];
         return "YES";
@@ -65,7 +67,8 @@ const deleteProperty = (arr) => {
         return "NO";
     }
 }
-console.log(deleteProperty([{fname:'John',},'fname']))
+const myArr = [{ fname: 'John', }, 'fname']
+console.log(deleteProperty(myArr))
 //solution
 function average(arrOfMarks) {
     let sum = 0;
@@ -75,7 +78,7 @@ function average(arrOfMarks) {
     return parseFloat((sum / arrOfMarks.length).toFixed(2));
 
 }
-console.log(average([75.25, 65, 80, 35.45, 99.50]))
+// console.log(average([75.25, 65, 80, 35.45, 99.50]))
 //solution
 function getLetter(s) {
     let letter;
@@ -96,4 +99,100 @@ function getLetter(s) {
 
     return letter;
 }
-console.log(getLetter('khafd'))
+// console.log(getLetter('khafd'))
+// solution
+function JimOrDelaOrChinku(marksOfJim, marksOfDela, marksOfChinku) {
+    if (marksOfJim > marksOfDela && marksOfJim > marksOfChinku) {
+        return "Jim";
+    } else if (marksOfDela > marksOfChinku) {
+        return "Dela";
+    } else {
+        return "Chinku";
+    }
+}
+const marks = JimOrDelaOrChinku(84, 99, 77);
+// console.log(marks)
+//Solution
+function findGrade(marks) {
+    if (marks >= 80 && marks <= 100) {
+        return "A"
+    } else if (marks >= 60 && marks < 80) {
+        return "B"
+    } else if (marks >= 50 && marks < 60) {
+        return "C"
+    } else if (marks >= 40 && marks < 50) {
+        return "D"
+    } else {
+        return "F"
+    }
+}
+console.log(findGrade(915))
+//solution Is it Isosceles??
+function checkTriangle(side1, side2, side3) {
+    if (side1 ===side2 && side1 ==side3) {
+        return "No";
+    } else if(side1===side2||side2===side3||side3===side1){
+        return "Yes"
+    }
+    else {
+        return "No"
+    }
+}
+// console.log(checkTriangle(9,9,9));
+//solution
+function tallestFriend ( numbers ) {
+    let smallest= numbers[0];
+      for(let x of numbers){
+        if(x<smallest){
+          smallest=x;
+        }
+      }
+      return smallest
+    }
+    const arrr=[157 , 134,  188     ]
+    // console.log(tallestFriend(arrr))
+//solution leap Year
+function findLeapYear(arrOfYears){
+    const leapYear=[]
+    for(let year of arrOfYears){
+        if(year%4===0 && year%100!==0 || year%400===0){
+            leapYear.push(year);
+        }
+    }
+    return leapYear;
+}
+const years=[2023,2024,2025,2028,2030]
+// console.log(findLeapYear(years));
+//solution second largest
+function secondLargest ( numbers ) {
+    let first=0;
+    let second=0;
+    for (let num of numbers){
+        if(num>first){
+            second=first;
+            first=num;
+            console.log(first)
+        }else if(num>second && num<first){
+            second=num;
+        }
+    }
+    return second;
+}
+secondLargest([10,33,66,5,99,100,6])
+//solution
+/* Complete the function called count_zero() which will take a binary string (Binary string is a string which consists of only 0 and 1) as a parameter and count how many 0’s are there in that string. */
+function countZeros ( binary_num ) {
+    const numString= binary_num.toString();
+    const numSplit=numString.split("");
+    let count=0;
+    let zeroString='';
+    for(let num of numSplit){
+        if(num==='0'){
+            zeroString+=num;
+            console.log(zeroString)
+            count++;
+        }
+    }
+    return count;
+}
+console.log(countZeros(10101))
